@@ -2,6 +2,17 @@
   "timezone": "Asia/Shanghai",
   "channels": [
     {
+      "id": "weixin",
+      "type": "webhook",
+      "name": "个人微信日报",
+      "enabled": true,
+      "send_hour": 19,
+      "send_minute": 0,
+      "topic_mode": "broad",
+      "max_news_items": 10,
+      "webhook_url_base": ""
+    },
+    {
       "id": "email",
       "type": "email",
       "name": "邮件",

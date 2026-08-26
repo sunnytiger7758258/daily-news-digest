@@ -730,7 +730,7 @@ def get_prompt_for_mode(mode: str, articles_text: str, max_items: int, category_
 
 
 def _call_deepseek(prompt: str, label: str) -> str:
-    """Call DeepSeek V3 API and return response text. Returns None on failure."""
+    """Call DeepSeek API and return response text. Returns None on failure."""
     import time
     import re
     from openai import OpenAI as OpenAIClient
@@ -743,7 +743,7 @@ def _call_deepseek(prompt: str, label: str) -> str:
     start = time.time()
     try:
         resp = client.chat.completions.create(
-            model="deepseek-chat",
+            model=os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-flash"),
             max_tokens=8192,
             messages=[{"role": "user", "content": prompt}],
         )
