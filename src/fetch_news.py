@@ -743,7 +743,7 @@ def _call_deepseek(prompt: str, label: str) -> str:
     start = time.time()
     try:
         resp = client.chat.completions.create(
-            model=os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-flash"),
+            model=os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-pro"),
             max_tokens=8192,
             messages=[{"role": "user", "content": prompt}],
         )
